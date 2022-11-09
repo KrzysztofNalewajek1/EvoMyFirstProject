@@ -160,9 +160,8 @@ function getRectangleInfo(length, width) {
         √ Correct calculate rectangle area (1 ms)
         √ Incorrect calculate rectangle area (1 ms)
         √ Correct rectangle info (67 ms)
-
-      Test Suites: 1 passed, 1 total
-      Tests:       5 passed, 5 total
-      Snapshots:   0 total
-      Time:        3.709 s
+        Test Suites: 1 passed, 1 total
+       Tests:       5 passed, 5 total
+       Snapshots:   0 total
+        Time:        3.709 s
       ```
