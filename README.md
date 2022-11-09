@@ -1,11 +1,12 @@
 # EvoMyFirstProject
-# Hometask: #project setup #unit tests #integration tests
+
+## Description
 
 ```text
-With this task you will go through the process of a project creation, setting up the basic structure for writing both code and tests.
+The Readme.md contains instruction how to setup project and run tests.
 ```
 
-#### Task 1: GitHub repository
+#### GitHub repository
 
 Go to your personal GitHub accocunt and create a new repository. 
 By opening the corresponding page 'github.com/new' you will need to specify the following parameters in order to create a project:
@@ -20,7 +21,7 @@ By opening the corresponding page 'github.com/new' you will need to specify the 
 When all the parameters are filled in, hit the button 'Create repository'. Repository should be created.
 After completing all the steps mentioned above, you need to clone the newly created repository to our local machine. 
 
-#### Task 2: Make a project structure
+#### Make a project structure
 
 1. Open terminal and navigate to the project root
 2. Initialize the project with the following command 'yarn init'. You will go through a set of basic questions as shown in an example below
@@ -53,11 +54,11 @@ project_name
     - package.json (file)
 ```
 
-#### Task 3: Project confguration
+#### Project confguration
 
-Since the project will contain javascript functions and the tests as well, it is needed to add the testing library, that we have discovered so far "JEST".
+Since the project will contain javascript functions and the tests as well, it is needed to add the testing library "JEST".
 
-1. Let's add JEST as development dependency with the command:
+1. Add JEST as development dependency with the command:
 - Open https://jestjs.io/docs/getting-started
 - Copy the command 'yarn add --dev jest'
 - Execute the command from the repository root
@@ -99,7 +100,27 @@ node_modules/
 
 Add above mentioned text part into the .gitignore file
 
-#### Task 4: Add JavaScript functions
+
+5. 'babel.config.cjs' will be added to project structure after run:
+yarn add --dev babel-jest @babel/core @babel/preset-env
+
+```
+  module.exports = {
+    presets: [
+      [
+        '@babel/preset-env',
+        {
+          targets: {
+            node: 'current'
+          }
+        }
+      ]
+    ]
+  };
+```
+
+
+#### Add JavaScript functions
 
 - Add '.js' file inside the 'js' folder. Name it 'rectangle.js'
 - Add the following functions: 
@@ -120,19 +141,28 @@ function getRectangleInfo(length, width) {
 }
 ```
 
-#### Task: 5 Tests, README, commit -> push -> merge
+#### Tests run
 
-Until this part all of the instructions were pretty detailed in order to make a proper project structure and some basis to start to do something inside the repository. Starting from here you will need to finish the project tasks by yourself. What needs to be done:
+- The tests are located in the "tests" folder in "rectangle.test.js" file.
+- In case of adding new funkctions and tests, remember to export/import function.
+- In case of adding new funkctions and tests, remember to add them using your own branch.
+- In case of adding new funkctions and tests, remember to commit changes to the repository.
 
-- Create a tests file and write tests for the functions provided in the 'rectangle.js' file
-- You need to write at least one test for each function to verify the 'happy path'
-- Write an instruction in the 'README.md' file how to install the project and run the tests
-- Once all mentioned above is done, commit and push the changes to your repository. Do not forget to merge it
-- When all is done. Write an e-mail to 'rsledevskis@evolution.com'
+- To run tests:
+    1. Navigate to the folder with test (VSC or Terminal);
+    2. execute following command: "yarn test"
+    3. Example of test executed:
+    
+       ```
+       PASS  tests/rectangle.test.js
+        √ Correct calculate rectangle perimeter (4 ms)
+        √ Incorrect calculate rectangle perimeter
+        √ Correct calculate rectangle area (1 ms)
+        √ Incorrect calculate rectangle area (1 ms)
+        √ Correct rectangle info (67 ms)
 
-```text
-To: 'rsledevskis@evolution.com'
-Subject: Hometask: [Name] [Surname]
-Body: [Link to your github repository]
-```
-
+      Test Suites: 1 passed, 1 total
+      Tests:       5 passed, 5 total
+      Snapshots:   0 total
+      Time:        3.709 s
+      ```
