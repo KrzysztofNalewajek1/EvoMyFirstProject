@@ -164,4 +164,4 @@ function getRectangleInfo(length, width) {
        Tests:       5 passed, 5 total
        Snapshots:   0 total
         Time:        3.709 s
-      ```
+        ```
